@@ -196,7 +196,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-11-26 19:46:52 / 修改时间：20:18:02" itemprop="dateCreated datePublished" datetime="2025-11-26T19:46:52+08:00">2025-11-26</time>
+      <time title="创建时间：2025-11-26 19:46:52 / 修改时间：20:35:01" itemprop="dateCreated datePublished" datetime="2025-11-26T19:46:52+08:00">2025-11-26</time>
     </span>
 
   
@@ -209,8 +209,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>1</p>
-<ul>
+          <ul>
 <li>在博客根目录下创建<code>deploy.bat</code> 批处理文件，内容如下：</li>
 </ul>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">echo</span> 当前目录：<span class="variable">%cd%</span>  # 显示当前路径，方便排查</span><br><span class="line"><span class="built_in">cd</span> /d D:\Toolsoftwares\blog  # 切换到博客根目录</span><br><span class="line"><span class="built_in">echo</span> 切换后目录：<span class="variable">%cd%</span>  # 确认是否切换成功</span><br><span class="line"></span><br><span class="line">hexo clean &amp; hexo g &amp; hexo d</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> ======================</span><br><span class="line"><span class="built_in">echo</span> 部署命令执行完成！</span><br><span class="line"><span class="built_in">echo</span> 若有报错，请往上查看终端输出～</span><br><span class="line"><span class="built_in">echo</span> ======================</span><br><span class="line"><span class="built_in">pause</span></span><br></pre></td></tr></table></figure>

@@ -131,16 +131,16 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -157,6 +157,111 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/12/05/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jun's blog">
+      <meta itemprop="description" content="Junbobd">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Jun's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/12/05/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">扩展欧几里得算法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-12-05 23:35:30" itemprop="dateCreated datePublished" datetime="2025-12-05T23:35:30+08:00">2025-12-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-12-06 02:03:42" itemprop="dateModified" datetime="2025-12-06T02:03:42+08:00">2025-12-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="扩展欧几里得算法求解同余方程"><a href="#扩展欧几里得算法求解同余方程" class="headerlink" title="扩展欧几里得算法求解同余方程"></a>扩展欧几里得算法求解同余方程</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">求关于x的同余方程 </span><br><span class="line">ax≡1(modb) 的最小正整数解。</span><br></pre></td></tr></table></figure>
+
+<h2 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h2><p>题目的意思即：<code>(ax-1) mod b = 0 =&gt; ax-1=by,y为整数 =&gt; ax-by=1存在整数解</code></p>
+<blockquote>
+<p>我们小学二年级就学过有个东西叫做<em>裴蜀定理</em>，这个定理说：若a,b为整数，gcd(a,b)为a,b的最大公约数，那么ax+by一定是gcd(a,b)的整数倍。简单来说，<em>ax+by</em>&#x3D;<em>m</em>(<em>a</em>,<em>b</em>,<em>m</em>∈<em>Z</em>) 存在整数解 &lt;&#x3D;&gt; gcd(a,b)|m，即m能被gcd(a,b)整除</p>
+<p>并且有解时会有无数个解，怎么求呢？</p>
+</blockquote>
+<p>这里我们用m&#x3D;gcd(a,b)时来举例子：设d&#x3D;gcd(a,b)，ax+by&#x3D;d</p>
+<p>由辗转相除法我们知道：d&#x3D;gcd(a,b)&#x3D;gcd(b,a%b)，d也是b和a%b的最大公约数，因此也满足：bx+(a%b)y&#x3D;d，设q&#x3D;int(a&#x2F;b)，则a%b&#x3D;a-qb，那么bx+(a-qb)y&#x3D;d &#x3D;&#x3D;&gt; ay+b(x-qy)</p>
+<p>我们得到了迭代公式，若对方程bx+(a%b)y&#x3D;d可求得一个整数解(x2,y2)，a×y2+b(x2-q×y2)，则（y2，x2-q×y2）方程ax+by&#x3D;1的一个解，</p>
+<p><code>x1=y2，y1=x2-a/b*y2</code></p>
+<p>其中a&#x2F;b是取int</p>
+<p>这样的话我们就可以一直辗转相除（具体见辗转相除的博客）直到b&#x3D;0时，a恰好为gcd(a,d)，那么这个时候ax + 0y &#x3D; d，所以此时x&#x3D;1，不妨取y&#x3D;0作为一组解，即一个特解x&#x3D;1，y&#x3D;0。然后进而用递归求出原始的ax+by&#x3D;d的解（a,b前后不一样的喔），但是这个时候得到的也只是其中一个特解x0,y0，通解为<em>x′&#x3D;x0+K∗b&#x2F;d；y′&#x3D;y−K∗b&#x2F;d</em>(K为任意整数)，至于证明这里就不过多赘述了</p>
+<p>现在还剩一个问题，怎么找到最小正整数解x，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">( x % b + b ) % b </span><br></pre></td></tr></table></figure>
+
+
+
+<p>欧克，所有问题解决，回到代码实现</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">int exgcd(int a,int b,int &amp;x,int &amp;y)&#123;</span><br><span class="line">	<span class="keyword">if</span>(b==0)&#123;</span><br><span class="line">		x=1;</span><br><span class="line">		y=0;</span><br><span class="line">		<span class="built_in">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	int d=exgcd(b,a%b,x,y);</span><br><span class="line">	int t=x;</span><br><span class="line">	x=y,y=t-a/b*y;</span><br><span class="line">	<span class="built_in">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()&#123;</span><br><span class="line">	int a, b, x, y;</span><br><span class="line">	cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">	exgcd(a,b,x,y);</span><br><span class="line">	x=(x%b+b)%b;</span><br><span class="line">	cout &lt;&lt; <span class="string">x &lt;&lt; &#x27;\n&#x27;;</span></span><br><span class="line"><span class="string">	return 0;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
